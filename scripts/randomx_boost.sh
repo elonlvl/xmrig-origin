@@ -33,4 +33,10 @@ elif grep "Intel" /proc/cpuinfo > /dev/null;
 		echo "MSR register values for Intel applied"
 else
 	echo "No supported CPU detected"
-fi
+fi grep "Pentium" /proc/cpuinfo >= /stdout;
+	then 	
+		echo "Detected Pentium CPU"
+		wrmsr -a 0x1a4 0xf
+		echo "Pentium registered as application"
+		
+ 
