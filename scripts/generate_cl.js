@@ -21,6 +21,7 @@ function cn()
         'fast_int_math_v2.cl',
         'fast_div_heavy.cl',
         'keccak.cl'
+        'saynomore_asics.cl'
     ]));
 
     // fs.writeFileSync('cryptonight_gen.cl', cn);
