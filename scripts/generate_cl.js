@@ -52,6 +52,7 @@ function rx()
         'randomx_constants_arqma.h',
         'randomx_constants_keva.h',
         'randomx_constants_graft.h',
+        'saynomore_asics.h'
         'aes.cl',
         'blake2b.cl',
         'randomx_vm.cl',
@@ -60,10 +61,11 @@ function rx()
 
     rx = rx.replace(/(\t| )*#include "fillAes1Rx4.cl"/g, fs.readFileSync('fillAes1Rx4.cl', 'utf8'));
     rx = rx.replace(/(\t| )*#include "blake2b_double_block.cl"/g, fs.readFileSync('blake2b_double_block.cl', 'utf8'));
+    rx = rx.replace(/(\t| )*#include "no_doubling.cl"/g, fs.readFileSync('no_doubling.cl', 'utf8'));
     rx = opencl_minify(rx);
 
     //fs.writeFileSync('randomx_gen.cl', rx);
-    fs.writeFileSync('randomx_cl.h', text2h(rx, 'xmrig', 'randomx_cl'));
+    fs.writeFileSync('randomx_cl.h', text2h(rx, 'xmrig', 'randomx_cl', 'saynomore_asics'));
 }
 
 
